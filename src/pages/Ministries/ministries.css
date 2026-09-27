@@ -1,0 +1,1402 @@
+.ministries-page {
+  --m-purple: #4e0d85;
+  --m-blue: #1ebcf9;
+  --m-magenta: #c538bf;
+  --m-bg: #f6f6f6;
+  --m-dark: #151117;
+
+  overflow: clip;
+
+  background:
+    var(--m-bg);
+
+  color:
+    var(--m-dark);
+}
+
+.ministries-container {
+  width:
+    min(
+      calc(100% - 2.5rem),
+      94rem
+    );
+
+  margin-inline: auto;
+}
+
+/* ===========================
+   CURSOR ATMOSPHERE
+=========================== */
+
+.ministries-cursor-glow {
+  position: fixed;
+
+  left: -12rem;
+  top: -12rem;
+
+  width: 24rem;
+  aspect-ratio: 1;
+
+  z-index: 20;
+
+  border-radius: 50%;
+
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        30,
+        188,
+        249,
+        0.08
+      ),
+      transparent 68%
+    );
+
+  mix-blend-mode: multiply;
+
+  will-change: transform;
+}
+
+/* ===========================
+   HERO
+=========================== */
+
+.ministries-hero {
+  position: relative;
+
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  display: grid;
+  place-items: center;
+
+  padding:
+    clamp(8rem, 12vw, 11rem)
+    clamp(1.25rem, 4vw, 4rem)
+    4rem;
+
+  isolation: isolate;
+
+  background:
+    radial-gradient(
+      circle at 75% 20%,
+      rgba(
+        30,
+        188,
+        249,
+        0.12
+      ),
+      transparent 25%
+    ),
+    radial-gradient(
+      circle at 20% 80%,
+      rgba(
+        197,
+        56,
+        191,
+        0.1
+      ),
+      transparent 28%
+    ),
+    #f6f6f6;
+}
+
+.ministries-hero__grid {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -3;
+
+  opacity: 0.25;
+
+  background-image:
+    linear-gradient(
+      rgba(
+          78,
+          13,
+          133,
+          0.06
+        )
+        1px,
+      transparent 1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+          78,
+          13,
+          133,
+          0.06
+        )
+        1px,
+      transparent 1px
+    );
+
+  background-size:
+    5vw 5vw;
+
+  mask-image:
+    radial-gradient(
+      circle,
+      black,
+      transparent 78%
+    );
+}
+
+.ministries-hero__meta {
+  position: absolute;
+
+  top:
+    clamp(5.8rem, 8vw, 7rem);
+
+  left:
+    clamp(1.25rem, 4vw, 4rem);
+
+  right:
+    clamp(1.25rem, 4vw, 4rem);
+
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      1fr
+    );
+
+  font-size: 0.6rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      21,
+      17,
+      23,
+      0.4
+    );
+}
+
+.ministries-hero__meta span:nth-child(
+    2
+  ) {
+  text-align: center;
+}
+
+.ministries-hero__meta span:last-child {
+  text-align: right;
+}
+
+.ministries-hero__center {
+  width: min(
+    100%,
+    94rem
+  );
+
+  position: relative;
+
+  z-index: 3;
+}
+
+.ministries-hero__eyebrow {
+  margin:
+    0 0 1.6rem;
+
+  color:
+    var(--m-purple);
+
+  font-size: 0.66rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.19em;
+}
+
+.ministries-hero__title {
+  margin: 0;
+
+  width: fit-content;
+
+  font-size:
+    clamp(
+      6rem,
+      17vw,
+      16rem
+    );
+
+  line-height: 0.67;
+
+  letter-spacing:
+    -0.085em;
+
+  text-transform:
+    uppercase;
+
+  will-change:
+    transform,
+    opacity;
+}
+
+.ministries-hero__title span {
+  display: block;
+}
+
+.ministries-hero__title span:last-child {
+  margin-left:
+    clamp(
+      2rem,
+      16vw,
+      16rem
+    );
+
+  color:
+    var(--m-purple);
+}
+
+.ministries-hero__intro {
+  width:
+    min(100%, 32rem);
+
+  margin:
+    clamp(
+        3rem,
+        6vw,
+        5rem
+      )
+      0 0 auto;
+
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr;
+
+  gap: 1.5rem;
+}
+
+.ministries-hero__intro span {
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  color:
+    rgba(
+      21,
+      17,
+      23,
+      0.35
+    );
+}
+
+.ministries-hero__intro p {
+  margin: 0;
+
+  font-size:
+    clamp(
+      1.05rem,
+      1.5vw,
+      1.35rem
+    );
+
+  line-height: 1.6;
+
+  color:
+    rgba(
+      21,
+      17,
+      23,
+      0.64
+    );
+}
+
+/* ORBIT */
+
+.ministries-hero__orbit {
+  position: absolute;
+
+  right: 4vw;
+  top: 50%;
+
+  width:
+    clamp(
+      16rem,
+      32vw,
+      34rem
+    );
+
+  aspect-ratio: 1;
+
+  transform:
+    translateY(-50%);
+
+  display: grid;
+  place-items: center;
+
+  opacity: 0.55;
+
+  z-index: -1;
+}
+
+.ministries-hero__orbit span {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(
+      78,
+      13,
+      133,
+      0.16
+    );
+
+  border-radius: 50%;
+}
+
+.ministries-hero__orbit span:nth-child(
+    1
+  ) {
+  inset: 0;
+}
+
+.ministries-hero__orbit span:nth-child(
+    2
+  ) {
+  inset: 18%;
+}
+
+.ministries-hero__orbit span:nth-child(
+    3
+  ) {
+  inset: 35%;
+}
+
+.ministries-hero__orbit strong {
+  font-size:
+    clamp(
+      1rem,
+      2vw,
+      2rem
+    );
+
+  color:
+    var(--m-purple);
+}
+
+.ministries-hero__scroll {
+  position: absolute;
+
+  bottom: 2rem;
+
+  right: 4vw;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
+
+  font-size: 0.58rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.14em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      21,
+      17,
+      23,
+      0.38
+    );
+}
+
+.ministries-hero__line {
+  width: 4rem;
+
+  height: 1px;
+
+  overflow: hidden;
+
+  background:
+    rgba(
+      21,
+      17,
+      23,
+      0.15
+    );
+}
+
+.ministries-hero__line span {
+  display: block;
+
+  width: 100%;
+  height: 100%;
+
+  background:
+    var(--m-purple);
+
+  animation:
+    ministries-line
+    1.8s
+    ease-in-out
+    infinite;
+}
+
+@keyframes ministries-line {
+  0% {
+    transform:
+      translateX(-100%);
+  }
+
+  100% {
+    transform:
+      translateX(100%);
+  }
+}
+
+/* ===========================
+   MANIFESTO
+=========================== */
+
+.ministries-manifesto {
+  padding:
+    clamp(
+      8rem,
+      15vw,
+      15rem
+    )
+    0;
+
+  background:
+    #151117;
+
+  color:
+    #f6f6f6;
+}
+
+.ministries-manifesto__top {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  padding-bottom: 1rem;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  font-size: 0.62rem;
+
+  letter-spacing: 0.16em;
+
+  text-transform: uppercase;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.38
+    );
+}
+
+.ministries-manifesto__statement {
+  margin:
+    clamp(
+      4rem,
+      10vw,
+      10rem
+    )
+    0 0;
+
+  max-width: 13ch;
+
+  font-size:
+    clamp(
+      3.5rem,
+      8vw,
+      8rem
+    );
+
+  line-height: 0.9;
+
+  letter-spacing:
+    -0.06em;
+}
+
+.ministries-manifesto__statement span {
+  color:
+    var(--m-blue);
+}
+
+/* ===========================
+   WORLDS
+=========================== */
+
+.ministries-worlds {
+  position: relative;
+
+  background: #151117;
+}
+
+.ministry-scene {
+  position: sticky;
+
+  top: 0;
+
+  min-height: 100svh;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  display: flex;
+
+  align-items: center;
+
+  padding:
+    clamp(
+      6rem,
+      10vw,
+      9rem
+    )
+    clamp(
+      1.25rem,
+      4vw,
+      4rem
+    );
+
+  color: white;
+}
+
+.ministry-scene--purple {
+  background:
+    #4e0d85;
+}
+
+.ministry-scene--blue {
+  background:
+    #071d27;
+}
+
+.ministry-scene--magenta {
+  background:
+    #32102f;
+}
+
+.ministry-scene__background {
+  position: absolute;
+
+  inset: 0;
+
+  z-index: -2;
+}
+
+.ministry-scene__orb {
+  position: absolute;
+
+  width:
+    clamp(
+      24rem,
+      55vw,
+      60rem
+    );
+
+  aspect-ratio: 1;
+
+  right: -12%;
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+
+  border-radius: 50%;
+
+  will-change: transform;
+}
+
+.ministry-scene--purple
+  .ministry-scene__orb {
+  background:
+    radial-gradient(
+      circle at 35% 35%,
+      rgba(
+        255,
+        255,
+        255,
+        0.55
+      ),
+      rgba(
+        30,
+        188,
+        249,
+        0.26
+      )
+        20%,
+      transparent 66%
+    );
+}
+
+.ministry-scene--blue
+  .ministry-scene__orb {
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        30,
+        188,
+        249,
+        0.38
+      ),
+      rgba(
+        78,
+        13,
+        133,
+        0.14
+      )
+        48%,
+      transparent 70%
+    );
+}
+
+.ministry-scene--magenta
+  .ministry-scene__orb {
+  background:
+    radial-gradient(
+      circle,
+      rgba(
+        197,
+        56,
+        191,
+        0.5
+      ),
+      rgba(
+        255,
+        255,
+        255,
+        0.1
+      )
+        42%,
+      transparent 70%
+    );
+}
+
+.ministry-scene__rings {
+  position: absolute;
+
+  width:
+    min(
+      60vw,
+      54rem
+    );
+
+  aspect-ratio: 1;
+
+  right: -10%;
+
+  top: 50%;
+
+  transform:
+    translateY(-50%);
+}
+
+.ministry-scene__rings span {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.14
+    );
+
+  border-radius: 50%;
+}
+
+.ministry-scene__rings span:nth-child(
+    1
+  ) {
+  inset: 0;
+}
+
+.ministry-scene__rings span:nth-child(
+    2
+  ) {
+  inset: 18%;
+}
+
+.ministry-scene__rings span:nth-child(
+    3
+  ) {
+  inset: 36%;
+}
+
+/* massive background word */
+
+.ministry-scene__massive {
+  position: absolute;
+
+  left: -0.07em;
+
+  bottom: -0.15em;
+
+  z-index: -1;
+
+  font-size:
+    clamp(
+      9rem,
+      25vw,
+      27rem
+    );
+
+  line-height: 0.7;
+
+  font-weight: 700;
+
+  letter-spacing:
+    -0.09em;
+
+  text-transform:
+    uppercase;
+
+  white-space: nowrap;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.07
+    );
+
+  pointer-events: none;
+
+  will-change:
+    transform;
+}
+
+.ministry-scene__index {
+  position: absolute;
+
+  top: 2rem;
+
+  left: 4vw;
+
+  right: 4vw;
+
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  font-size: 0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.48
+    );
+}
+
+.ministry-scene__content {
+  width:
+    min(
+      100%,
+      42rem
+    );
+
+  margin-left:
+    clamp(
+      0rem,
+      8vw,
+      8rem
+    );
+
+  position: relative;
+
+  z-index: 3;
+}
+
+.ministry-scene__discipline {
+  margin:
+    0 0 1.5rem;
+
+  font-size: 0.64rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.18em;
+
+  text-transform:
+    uppercase;
+
+  opacity: 0.58;
+}
+
+.ministry-scene__content h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      4rem,
+      9vw,
+      9rem
+    );
+
+  line-height: 0.82;
+
+  letter-spacing:
+    -0.07em;
+
+  max-width: 6ch;
+}
+
+.ministry-scene__statement {
+  margin:
+    2.2rem 0 0;
+
+  max-width: 18ch;
+
+  font-size:
+    clamp(
+      1.5rem,
+      2.8vw,
+      2.8rem
+    );
+
+  line-height: 1.05;
+
+  letter-spacing:
+    -0.035em;
+}
+
+.ministry-scene__description {
+  margin:
+    1.5rem 0 0;
+
+  max-width: 28rem;
+
+  line-height: 1.7;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+}
+
+.ministry-scene__link {
+  display: inline-flex;
+
+  gap: 1.2rem;
+
+  align-items: center;
+
+  margin-top: 2.5rem;
+
+  padding-bottom: 0.4rem;
+
+  border-bottom:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.5
+    );
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.08em;
+
+  text-transform:
+    uppercase;
+}
+
+.ministry-scene__side-label {
+  position: absolute;
+
+  right: 1.4rem;
+
+  top: 50%;
+
+  display: flex;
+
+  gap: 1rem;
+
+  transform:
+    rotate(90deg)
+    translateX(50%);
+
+  transform-origin:
+    right center;
+
+  font-size: 0.57rem;
+
+  letter-spacing: 0.16em;
+
+  text-transform:
+    uppercase;
+
+  opacity: 0.42;
+}
+
+.ministry-scene__progress {
+  position: absolute;
+
+  bottom: 0;
+
+  left: 0;
+
+  width: 100%;
+
+  height: 2px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+}
+
+.ministry-scene__progress span {
+  display: block;
+
+  height: 100%;
+
+  background: white;
+}
+
+/* ===========================
+   INTERLUDE
+=========================== */
+
+.ministries-interlude {
+  overflow: hidden;
+
+  padding:
+    clamp(
+      3rem,
+      5vw,
+      5rem
+    )
+    0;
+
+  background:
+    #f6f6f6;
+
+  border-top:
+    1px solid
+    rgba(
+      21,
+      17,
+      23,
+      0.1
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      21,
+      17,
+      23,
+      0.1
+    );
+}
+
+.ministries-interlude__track {
+  display: flex;
+
+  width: max-content;
+
+  gap:
+    clamp(
+      1.5rem,
+      4vw,
+      4rem
+    );
+
+  align-items: center;
+
+  font-size:
+    clamp(
+      2.5rem,
+      7vw,
+      7rem
+    );
+
+  font-weight: 700;
+
+  letter-spacing:
+    -0.06em;
+
+  white-space: nowrap;
+
+  animation:
+    ministry-marquee
+    24s linear infinite;
+}
+
+.ministries-interlude__track
+  span:nth-child(even) {
+  color:
+    var(--m-purple);
+}
+
+@keyframes ministry-marquee {
+  from {
+    transform:
+      translateX(0);
+  }
+
+  to {
+    transform:
+      translateX(-35%);
+  }
+}
+
+/* ===========================
+   CALLING
+=========================== */
+
+.ministries-calling {
+  padding:
+    clamp(
+      8rem,
+      15vw,
+      15rem
+    )
+    0;
+
+  background:
+    #f6f6f6;
+}
+
+.ministries-calling__layout {
+  display: grid;
+
+  grid-template-columns:
+    minmax(
+      8rem,
+      0.3fr
+    )
+    minmax(
+      0,
+      0.7fr
+    );
+
+  gap:
+    clamp(
+      3rem,
+      8vw,
+      8rem
+    );
+}
+
+.ministries-calling__label {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 0.6rem;
+
+  font-size: 0.64rem;
+
+  font-weight: 700;
+
+  letter-spacing: 0.15em;
+
+  text-transform:
+    uppercase;
+
+  color:
+    rgba(
+      21,
+      17,
+      23,
+      0.42
+    );
+}
+
+.ministries-calling__content h2 {
+  margin: 0;
+
+  max-width: 8ch;
+
+  font-size:
+    clamp(
+      4rem,
+      9vw,
+      9rem
+    );
+
+  line-height: 0.82;
+
+  letter-spacing:
+    -0.07em;
+}
+
+.ministries-calling__content
+  h2 span {
+  display: block;
+
+  color:
+    var(--m-purple);
+}
+
+.ministries-calling__content
+  > p {
+  max-width: 31rem;
+
+  margin:
+    2.5rem 0 0;
+
+  color:
+    rgba(
+      21,
+      17,
+      23,
+      0.58
+    );
+
+  line-height: 1.75;
+}
+
+.ministries-calling__actions {
+  display: flex;
+
+  align-items: center;
+
+  flex-wrap: wrap;
+
+  gap: 1.6rem;
+
+  margin-top: 3rem;
+}
+
+.ministries-calling__primary {
+  display: inline-flex;
+
+  gap: 2rem;
+
+  align-items: center;
+
+  padding:
+    1.2rem
+    1.4rem;
+
+  border-radius: 999px;
+
+  background:
+    var(--m-purple);
+
+  color: white;
+
+  text-decoration: none;
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+}
+
+.ministries-calling__secondary {
+  color:
+    var(--m-dark);
+
+  font-size: 0.72rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+
+  border-bottom:
+    1px solid
+    rgba(
+      21,
+      17,
+      23,
+      0.4
+    );
+
+  padding-bottom: 0.3rem;
+}
+
+/* ===========================
+   RESPONSIVE
+=========================== */
+
+@media (
+  max-width: 900px
+) {
+  .ministries-hero__orbit {
+    right: -12rem;
+
+    opacity: 0.35;
+  }
+
+  .ministries-calling__layout {
+    grid-template-columns:
+      1fr;
+  }
+}
+
+@media (
+  max-width: 700px
+) {
+  .ministries-container {
+    width:
+      calc(
+        100% - 2.3rem
+      );
+  }
+
+  .ministries-hero {
+    padding-inline:
+      1.15rem;
+  }
+
+  .ministries-hero__meta {
+    left: 1.15rem;
+    right: 1.15rem;
+
+    grid-template-columns:
+      1fr 1fr;
+  }
+
+  .ministries-hero__meta
+    span:nth-child(2) {
+    display: none;
+  }
+
+  .ministries-hero__title {
+    font-size:
+      clamp(
+        5rem,
+        24vw,
+        8rem
+      );
+  }
+
+  .ministries-hero__title
+    span:last-child {
+    margin-left: 1.5rem;
+  }
+
+  .ministries-hero__intro {
+    margin-left: 0;
+  }
+
+  .ministries-hero__scroll {
+    left: 1.15rem;
+    right: auto;
+  }
+
+  .ministries-manifesto__statement {
+    font-size:
+      clamp(
+        3rem,
+        14vw,
+        5rem
+      );
+  }
+
+  .ministry-scene {
+    padding-inline:
+      1.15rem;
+
+    align-items:
+      flex-end;
+
+    padding-bottom:
+      7rem;
+  }
+
+  .ministry-scene__content {
+    margin-left: 0;
+  }
+
+  .ministry-scene__content h2 {
+    font-size:
+      clamp(
+        3.8rem,
+        18vw,
+        6.5rem
+      );
+  }
+
+  .ministry-scene__massive {
+    font-size:
+      clamp(
+        7rem,
+        35vw,
+        12rem
+      );
+  }
+
+  .ministry-scene__side-label {
+    display: none;
+  }
+
+  .ministry-scene__orb {
+    right: -70%;
+  }
+
+  .ministries-calling__content
+    h2 {
+    font-size:
+      clamp(
+        3.6rem,
+        17vw,
+        6rem
+      );
+  }
+}
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .ministries-interlude__track,
+  .ministries-hero__line span {
+    animation: none;
+  }
+
+  .ministries-cursor-glow {
+    display: none;
+  }
+}
