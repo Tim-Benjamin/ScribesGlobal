@@ -1,60 +1,38 @@
 /* =========================================================
-   ABOUT — BASE
+   ABOUT — SCRIBES GLOBAL
 ========================================================= */
 
 .about-page {
   --about-purple: #4e0d85;
   --about-blue: #1ebcf9;
   --about-magenta: #c538bf;
-  --about-bg: #f6f6f6;
-  --about-dark: #161119;
-  --about-muted: rgba(
-    22,
-    17,
-    25,
-    0.58
-  );
+  --about-gold: #d4af37;
+  --about-gold-light: #f2d97a;
+  --about-coral: #eb5757;
 
-  overflow: hidden;
+  --about-ink: #17131c;
+  --about-dark: #0c0910;
+  --about-canvas: #f6f6f6;
 
-  background: var(--about-bg);
-  color: var(--about-dark);
+  width: 100%;
+  overflow: clip;
+
+  background:
+    var(--about-canvas);
+
+  color:
+    var(--about-ink);
 }
 
 .about-container {
-  width: min(
-    calc(100% - 2.5rem),
-    94rem
-  );
+  width:
+    min(
+      calc(100% - 2.5rem),
+      94rem
+    );
 
-  margin-inline: auto;
-}
-
-.about-section-number {
-  display: block;
-
-  margin-bottom: 0.65rem;
-
-  font-size: 0.67rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-
-  color:
-    rgba(22, 17, 25, 0.38);
-}
-
-.about-section-eyebrow {
-  margin: 0;
-
-  color: var(--about-purple);
-
-  font-size: 0.68rem;
-  font-weight: 700;
-
-  letter-spacing: 0.17em;
-
-  text-transform: uppercase;
+  margin-inline:
+    auto;
 }
 
 /* =========================================================
@@ -64,690 +42,139 @@
 .about-hero {
   position: relative;
 
-  min-height: 100svh;
+  min-height:
+    100svh;
 
   display: flex;
-  align-items: center;
 
-  isolation: isolate;
+  align-items: center;
 
   overflow: hidden;
 
+  isolation: isolate;
+
   padding:
-    clamp(8rem, 12vw, 11rem)
-    clamp(1.25rem, 4vw, 4.5rem)
-    clamp(4rem, 7vw, 6rem);
+    8rem 0
+    4rem;
 
   background:
-    radial-gradient(
-      circle at 75% 35%,
+    var(--about-dark);
+
+  color: white;
+}
+
+.about-hero__background {
+  position: absolute;
+
+  z-index: -5;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.22;
+
+  transform:
+    scale(1.04);
+}
+
+.about-hero__overlay {
+  position: absolute;
+
+  z-index: -4;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      105deg,
       rgba(
-        30,
-        188,
-        249,
-        0.1
-      ),
-      transparent 27%
-    ),
-    radial-gradient(
-      circle at 80% 70%,
+        8,
+        5,
+        11,
+        0.98
+      )
+        0%,
       rgba(
-        197,
-        56,
-        191,
-        0.09
-      ),
-      transparent 32%
-    ),
-    var(--about-bg);
+        18,
+        7,
+        28,
+        0.88
+      )
+        48%,
+      rgba(
+        8,
+        8,
+        15,
+        0.72
+      )
+        100%
+    );
 }
 
 .about-hero__grid {
   position: absolute;
+
+  z-index: -3;
+
   inset: 0;
 
-  z-index: -2;
-
-  opacity: 0.32;
+  opacity: 0.08;
 
   background-image:
     linear-gradient(
       rgba(
-          78,
-          13,
-          133,
-          0.055
-        )
+        255,
+        255,
+        255,
+        0.1
+      )
         1px,
-      transparent 1px
+      transparent
+        1px
     ),
     linear-gradient(
       90deg,
       rgba(
-          78,
-          13,
-          133,
-          0.055
-        )
+        255,
+        255,
+        255,
+        0.1
+      )
         1px,
-      transparent 1px
+      transparent
+        1px
     );
 
   background-size:
-    clamp(48px, 5vw, 78px)
-    clamp(48px, 5vw, 78px);
-
-  mask-image:
-    linear-gradient(
-      to bottom,
-      transparent,
-      black 18%,
-      black 78%,
-      transparent
-    );
+    5rem 5rem;
 }
 
 .about-hero__orb {
   position: absolute;
 
-  z-index: -1;
+  z-index: -2;
 
-  right:
-    clamp(-11rem, -5vw, -3rem);
+  border-radius:
+    50%;
 
-  top: 20%;
+  pointer-events: none;
+}
 
+.about-hero__orb--one {
   width:
-    clamp(21rem, 42vw, 46rem);
+    min(
+      58vw,
+      55rem
+    );
 
   aspect-ratio: 1;
 
-  border-radius: 50%;
-
-  border:
-    1px solid
-    rgba(
-      78,
-      13,
-      133,
-      0.12
-    );
-
-  background:
-    radial-gradient(
-      circle at 38% 35%,
-      rgba(
-        255,
-        255,
-        255,
-        0.92
-      ),
-      rgba(
-          30,
-          188,
-          249,
-          0.23
-        )
-        25%,
-      rgba(
-          197,
-          56,
-          191,
-          0.17
-        )
-        49%,
-      rgba(
-          78,
-          13,
-          133,
-          0.08
-        )
-        68%,
-      transparent 74%
-    );
-
-  box-shadow:
-    inset 0 0 5rem
-      rgba(
-        255,
-        255,
-        255,
-        0.55
-      ),
-    0 0 8rem
-      rgba(
-        30,
-        188,
-        249,
-        0.08
-      );
-
-  will-change:
-    transform;
-}
-
-.about-hero__top {
-  position: absolute;
-
-  top:
-    clamp(5.7rem, 8vw, 7rem);
-
-  left:
-    clamp(1.25rem, 4vw, 4.5rem);
-
-  right:
-    clamp(1.25rem, 4vw, 4.5rem);
-
-  display: flex;
-  justify-content:
-    space-between;
-
-  gap: 2rem;
-
-  font-size: 0.65rem;
-  font-weight: 700;
-
-  letter-spacing: 0.16em;
-
-  text-transform: uppercase;
-
-  color:
-    rgba(22, 17, 25, 0.43);
-}
-
-.about-hero__inner {
-  width: min(
-    100%,
-    94rem
-  );
-
-  margin-inline: auto;
-}
-
-.about-hero__eyebrow {
-  margin:
-    0 0
-    clamp(1.5rem, 3vw, 2.5rem);
-
-  color: var(--about-purple);
-
-  font-size: 0.66rem;
-  font-weight: 700;
-
-  letter-spacing: 0.19em;
-}
-
-.about-hero__title {
-  margin: 0;
-
-  max-width: 9ch;
-
-  font-size:
-    clamp(
-      4.7rem,
-      13vw,
-      12.5rem
-    );
-
-  line-height: 0.77;
-
-  letter-spacing: -0.075em;
-
-  text-transform: uppercase;
-
-  will-change:
-    transform,
-    opacity;
-}
-
-.about-hero__title span {
-  display: block;
-}
-
-.about-hero__title-accent {
-  color: var(--about-purple);
-}
-
-.about-hero__intro {
-  width:
-    min(100%, 34rem);
-
-  margin-top:
-    clamp(2.5rem, 5vw, 4rem);
-
-  margin-left:
-    clamp(0rem, 30vw, 30rem);
-
-  display: grid;
-
-  grid-template-columns:
-    auto 1fr;
-
-  gap: 1.5rem;
-
-  align-items: start;
-}
-
-.about-hero__intro-number {
-  padding-top: 0.3rem;
-
-  color:
-    rgba(22, 17, 25, 0.37);
-
-  font-size: 0.66rem;
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-}
-
-.about-hero__intro p {
-  margin: 0;
-
-  font-size:
-    clamp(
-      1.1rem,
-      1.6vw,
-      1.45rem
-    );
-
-  line-height: 1.55;
-
-  color:
-    rgba(22, 17, 25, 0.68);
-}
-
-.about-hero__scroll {
-  position: absolute;
-
-  right:
-    clamp(1.25rem, 4vw, 4.5rem);
-
-  bottom:
-    clamp(1.4rem, 3vw, 2.6rem);
-
-  display: flex;
-  align-items: center;
-
-  gap: 0.9rem;
-
-  color:
-    rgba(22, 17, 25, 0.39);
-
-  font-size: 0.6rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-
-  text-transform: uppercase;
-}
-
-.about-hero__scroll-line {
-  display: block;
-
-  position: relative;
-
-  overflow: hidden;
-
-  width: 3.5rem;
-  height: 1px;
-
-  background:
-    rgba(22, 17, 25, 0.14);
-}
-
-.about-hero__scroll-line span {
-  position: absolute;
-  inset: 0;
-
-  background:
-    var(--about-purple);
-
-  animation:
-    about-scroll
-    1.8s
-    cubic-bezier(
-      0.76,
-      0,
-      0.24,
-      1
-    )
-    infinite;
-}
-
-@keyframes about-scroll {
-  from {
-    transform:
-      translateX(-100%)
-      scaleX(0.3);
-  }
-
-  50% {
-    transform:
-      translateX(0)
-      scaleX(1);
-  }
-
-  to {
-    transform:
-      translateX(100%)
-      scaleX(0.3);
-  }
-}
-
-/* =========================================================
-   ORIGIN
-========================================================= */
-
-.about-origin {
-  padding:
-    clamp(6rem, 12vw, 12rem)
-    0;
-
-  border-top:
-    1px solid
-    rgba(22, 17, 25, 0.08);
-}
-
-.about-origin__label {
-  display: flex;
-
-  gap: 1rem;
-
-  margin-bottom:
-    clamp(3rem, 7vw, 7rem);
-
-  color:
-    rgba(22, 17, 25, 0.42);
-
-  font-size: 0.66rem;
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-
-  text-transform: uppercase;
-}
-
-.about-origin__layout {
-  display: grid;
-
-  grid-template-columns:
-    minmax(0, 1.4fr)
-    minmax(18rem, 0.6fr);
-
-  gap:
-    clamp(3rem, 9vw, 10rem);
-
-  align-items: start;
-}
-
-.about-origin__layout h2 {
-  margin: 0;
-
-  max-width: 8ch;
-
-  font-size:
-    clamp(
-      3.6rem,
-      8vw,
-      8rem
-    );
-
-  line-height: 0.87;
-
-  letter-spacing: -0.065em;
-}
-
-.about-origin__layout h2 span {
-  display: block;
-
-  color: var(--about-purple);
-}
-
-.about-origin__copy {
-  padding-top: 0.5rem;
-}
-
-.about-origin__copy p {
-  margin:
-    0 0 1.5rem;
-
-  color:
-    var(--about-muted);
-
-  line-height: 1.75;
-
-  font-size:
-    clamp(
-      0.96rem,
-      1.1vw,
-      1.08rem
-    );
-}
-
-.about-inline-link {
-  display: inline-flex;
-
-  align-items: center;
-
-  gap: 0.9rem;
-
-  margin-top: 1rem;
-
-  padding-bottom: 0.35rem;
-
-  border-bottom:
-    1px solid
-    var(--about-purple);
-
-  color:
-    var(--about-purple);
-
-  text-decoration: none;
-
-  font-size: 0.72rem;
-  font-weight: 700;
-
-  letter-spacing: 0.08em;
-
-  text-transform: uppercase;
-}
-
-/* =========================================================
-   ACRONYM
-========================================================= */
-
-.about-acronym {
-  padding:
-    clamp(6rem, 12vw, 12rem)
-    0;
-
-  background: #ffffff;
-}
-
-.about-acronym__heading {
-  display: grid;
-
-  grid-template-columns:
-    minmax(8rem, 0.35fr)
-    1fr;
-
-  gap: 3rem;
-
-  align-items: end;
-
-  margin-bottom:
-    clamp(4rem, 8vw, 7rem);
-}
-
-.about-acronym__heading h2 {
-  margin: 0;
-
-  max-width: 9ch;
-
-  font-size:
-    clamp(
-      3rem,
-      6.5vw,
-      6.8rem
-    );
-
-  line-height: 0.9;
-
-  letter-spacing: -0.06em;
-}
-
-.about-acronym__heading h2 span {
-  display: block;
-
-  color:
-    var(--about-purple);
-}
-
-.about-acronym__list {
-  border-top:
-    1px solid
-    rgba(22, 17, 25, 0.13);
-}
-
-.about-acronym__item {
-  display: grid;
-
-  grid-template-columns:
-    5rem
-    minmax(6rem, 0.3fr)
-    1fr;
-
-  align-items: center;
-
-  min-height:
-    clamp(6rem, 10vw, 9rem);
-
-  border-bottom:
-    1px solid
-    rgba(22, 17, 25, 0.13);
-}
-
-.about-acronym__index {
-  color:
-    rgba(22, 17, 25, 0.3);
-
-  font-size: 0.62rem;
-  font-weight: 700;
-
-  letter-spacing: 0.13em;
-}
-
-.about-acronym__letter {
-  color:
-    var(--about-purple);
-
-  font-size:
-    clamp(
-      2.5rem,
-      5vw,
-      5.2rem
-    );
-
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: -0.06em;
-}
-
-.about-acronym__word {
-  font-size:
-    clamp(
-      1.8rem,
-      4vw,
-      4.3rem
-    );
-
-  line-height: 1;
-
-  font-weight: 700;
-
-  letter-spacing: -0.045em;
-}
-
-.about-acronym__full {
-  margin:
-    clamp(3rem, 6vw, 5rem)
-    0 0 auto;
-
-  width:
-    min(100%, 43rem);
-
-  color:
-    rgba(22, 17, 25, 0.52);
-
-  font-size:
-    clamp(
-      1.1rem,
-      1.8vw,
-      1.65rem
-    );
-
-  line-height: 1.5;
-}
-
-/* =========================================================
-   SCRIPTURE
-========================================================= */
-
-.about-scripture {
-  position: relative;
-
-  overflow: hidden;
-
-  padding:
-    clamp(7rem, 14vw, 14rem)
-    0;
-
-  background:
-    radial-gradient(
-      circle at 75% 28%,
-      rgba(
-        30,
-        188,
-        249,
-        0.12
-      ),
-      transparent 28%
-    ),
-    radial-gradient(
-      circle at 20% 80%,
-      rgba(
-        197,
-        56,
-        191,
-        0.12
-      ),
-      transparent 32%
-    ),
-    #161119;
-
-  color: #f6f6f6;
-}
-
-.about-scripture__glow {
-  position: absolute;
-
-  left: 50%;
-  top: 42%;
-
-  width:
-    clamp(20rem, 45vw, 48rem);
-
-  aspect-ratio: 1;
-
-  border-radius: 50%;
-
-  transform:
-    translate(
-      -50%,
-      -50%
-    );
+  right: -18%;
+  top: -20%;
 
   background:
     radial-gradient(
@@ -756,565 +183,325 @@
         78,
         13,
         133,
-        0.3
+        0.46
       ),
       transparent 68%
     );
-
-  pointer-events: none;
 }
 
-.about-scripture__top {
-  position: relative;
-
-  display: grid;
-
-  grid-template-columns:
-    auto 1fr auto;
-
-  gap: 1rem;
-
-  padding-bottom: 1.3rem;
-
-  border-bottom:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.12
-    );
-
-  color:
-    rgba(
-      246,
-      246,
-      246,
-      0.47
-    );
-
-  font-size: 0.62rem;
-  font-weight: 700;
-
-  letter-spacing: 0.14em;
-
-  text-transform: uppercase;
-}
-
-.about-scripture__statement {
-  position: relative;
-
-  padding:
-    clamp(4rem, 9vw, 9rem)
-    0;
-
-  text-align: center;
-}
-
-.about-scripture__statement p {
+.about-hero__orb--two {
   width:
-    min(100%, 34rem);
-
-  margin:
-    0 auto
-    2.5rem;
-
-  color:
-    rgba(
-      246,
-      246,
-      246,
-      0.58
+    min(
+      36vw,
+      34rem
     );
-
-  line-height: 1.7;
-}
-
-.about-scripture__statement h2 {
-  margin: 0;
-
-  font-size:
-    clamp(
-      4rem,
-      10vw,
-      10rem
-    );
-
-  line-height: 0.8;
-
-  letter-spacing: -0.07em;
-}
-
-.about-scripture__statement h2 span {
-  display: block;
-
-  color:
-    var(--about-blue);
-}
-
-.about-scripture__story {
-  position: relative;
-
-  display: grid;
-
-  grid-template-columns:
-    minmax(10rem, 0.35fr)
-    minmax(0, 0.65fr);
-
-  gap:
-    clamp(3rem, 8vw, 8rem);
-
-  width:
-    min(100%, 72rem);
-
-  margin-inline: auto;
-
-  padding-top:
-    clamp(3rem, 6vw, 5rem);
-
-  border-top:
-    1px solid
-    rgba(
-      255,
-      255,
-      255,
-      0.12
-    );
-}
-
-.about-scripture__aside {
-  display: flex;
-  flex-direction: column;
-
-  gap: 0.3rem;
-}
-
-.about-scripture__aside span {
-  font-size:
-    clamp(
-      1.8rem,
-      3vw,
-      3rem
-    );
-
-  font-weight: 700;
-
-  letter-spacing: -0.045em;
-}
-
-.about-scripture__aside small {
-  color:
-    var(--about-blue);
-
-  font-size: 0.66rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-
-  text-transform: uppercase;
-}
-
-.about-scripture__copy p {
-  margin:
-    0 0 1.5rem;
-
-  color:
-    rgba(
-      246,
-      246,
-      246,
-      0.59
-    );
-
-  line-height: 1.8;
-}
-
-/* =========================================================
-   IDENTITY
-========================================================= */
-
-.about-identity {
-  padding:
-    clamp(6rem, 12vw, 12rem)
-    0;
-}
-
-.about-identity__header {
-  display: grid;
-
-  grid-template-columns:
-    minmax(8rem, 0.3fr)
-    minmax(0, 0.7fr);
-
-  gap: 3rem;
-
-  margin-bottom:
-    clamp(4rem, 8vw, 8rem);
-}
-
-.about-identity__header h2 {
-  margin: 0;
-
-  max-width: 9ch;
-
-  font-size:
-    clamp(
-      3.3rem,
-      7vw,
-      7.2rem
-    );
-
-  line-height: 0.88;
-
-  letter-spacing: -0.06em;
-}
-
-.about-identity__header h2 span {
-  display: block;
-
-  color:
-    var(--about-purple);
-}
-
-.about-identity__grid {
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      3,
-      minmax(0, 1fr)
-    );
-
-  border-top:
-    1px solid
-    rgba(22, 17, 25, 0.12);
-}
-
-.about-identity__card {
-  min-height:
-    clamp(24rem, 34vw, 33rem);
-
-  padding:
-    clamp(1.5rem, 3vw, 3rem);
-
-  display: flex;
-  flex-direction: column;
-
-  justify-content:
-    space-between;
-
-  border-right:
-    1px solid
-    rgba(22, 17, 25, 0.12);
-
-  border-bottom:
-    1px solid
-    rgba(22, 17, 25, 0.12);
-}
-
-.about-identity__card > span {
-  color:
-    rgba(22, 17, 25, 0.3);
-
-  font-size: 0.64rem;
-  font-weight: 700;
-
-  letter-spacing: 0.12em;
-}
-
-.about-identity__card h3 {
-  margin:
-    0 0 1rem;
-
-  max-width: 8ch;
-
-  font-size:
-    clamp(
-      2rem,
-      3.6vw,
-      3.8rem
-    );
-
-  line-height: 0.94;
-
-  letter-spacing: -0.055em;
-}
-
-.about-identity__card p {
-  margin: 0;
-
-  max-width: 23rem;
-
-  color:
-    var(--about-muted);
-
-  line-height: 1.7;
-}
-
-/* =========================================================
-   MISSION / VISION
-========================================================= */
-
-.about-direction {
-  display: grid;
-
-  grid-template-columns:
-    repeat(
-      2,
-      minmax(0, 1fr)
-    );
-}
-
-.about-direction__panel {
-  position: relative;
-
-  isolation: isolate;
-
-  overflow: hidden;
-
-  min-height:
-    min(75rem, 80svh);
-
-  padding:
-    clamp(3rem, 7vw, 7rem);
-
-  display: flex;
-
-  flex-direction: column;
-
-  justify-content: center;
-}
-
-.about-direction__panel--mission {
-  background:
-    var(--about-purple);
-
-  color: #ffffff;
-}
-
-.about-direction__panel--vision {
-  background:
-    var(--about-blue);
-
-  color:
-    var(--about-dark);
-}
-
-.about-direction__number {
-  position: absolute;
-
-  left:
-    clamp(2rem, 4vw, 4rem);
-
-  top:
-    clamp(2rem, 4vw, 4rem);
-
-  font-size: 0.65rem;
-
-  font-weight: 700;
-
-  letter-spacing: 0.15em;
-
-  opacity: 0.55;
-}
-
-.about-direction__eyebrow {
-  position: relative;
-
-  margin:
-    0 0 1.4rem;
-
-  font-size: 0.65rem;
-  font-weight: 700;
-
-  letter-spacing: 0.18em;
-
-  text-transform: uppercase;
-}
-
-.about-direction__panel h2 {
-  position: relative;
-
-  margin: 0;
-
-  max-width: 8ch;
-
-  font-size:
-    clamp(
-      3.2rem,
-      6vw,
-      6.6rem
-    );
-
-  line-height: 0.88;
-
-  letter-spacing: -0.065em;
-}
-
-.about-direction__panel h2 span {
-  display: block;
-}
-
-.about-direction__copy {
-  position: relative;
-
-  width:
-    min(100%, 29rem);
-
-  margin:
-    2.5rem 0 0;
-
-  line-height: 1.75;
-
-  opacity: 0.68;
-}
-
-.about-direction__circle {
-  position: absolute;
-
-  z-index: -1;
-
-  right: -18%;
-  bottom: -18%;
-
-  width: 70%;
 
   aspect-ratio: 1;
 
-  border:
-    1px solid
-    currentColor;
-
-  border-radius: 50%;
-
-  opacity: 0.15;
-}
-
-.about-direction__circle::before,
-.about-direction__circle::after {
-  content: "";
-
-  position: absolute;
-
-  border:
-    1px solid
-    currentColor;
-
-  border-radius: inherit;
-}
-
-.about-direction__circle::before {
-  inset: 18%;
-}
-
-.about-direction__circle::after {
-  inset: 37%;
-}
-
-/* =========================================================
-   CTA
-========================================================= */
-
-.about-cta {
-  padding:
-    clamp(7rem, 15vw, 15rem)
-    0;
+  left: -12%;
+  bottom: -18%;
 
   background:
-    var(--about-bg);
+    radial-gradient(
+      circle,
+      rgba(
+        30,
+        188,
+        249,
+        0.18
+      ),
+      transparent 70%
+    );
 }
 
-.about-cta__inner {
-  width:
-    min(100%, 75rem);
+.about-hero__inner {
+  position: relative;
 
-  margin-inline: auto;
-
-  text-align: center;
+  z-index: 2;
 }
 
-.about-cta__inner > p {
-  margin:
-    0 0 1.5rem;
+.about-hero__established {
+  display: flex;
+
+  align-items: center;
+
+  gap: 0.8rem;
 
   color:
-    var(--about-purple);
+    var(--about-gold-light);
 
-  font-size: 0.65rem;
+  font-size:
+    0.6rem;
+
   font-weight: 700;
 
-  letter-spacing: 0.18em;
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
 }
 
-.about-cta h2 {
-  margin: 0;
+.about-hero__established-line {
+  width: 3rem;
+  height: 1px;
+
+  background:
+    var(--about-gold);
+}
+
+.about-hero__title {
+  margin-top:
+    clamp(
+      3.5rem,
+      7vw,
+      7rem
+    );
+}
+
+.about-hero__title
+  > span {
+  color:
+    var(--about-blue);
+
+  font-size:
+    0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.18em;
+
+  text-transform:
+    uppercase;
+}
+
+.about-hero h1 {
+  margin:
+    0.7rem 0 0;
+
+  max-width:
+    9ch;
 
   font-size:
     clamp(
-      3.5rem,
-      8vw,
-      8.2rem
+      5rem,
+      12vw,
+      12rem
     );
 
-  line-height: 0.86;
+  line-height:
+    0.74;
 
-  letter-spacing: -0.07em;
+  letter-spacing:
+    -0.078em;
+
+  text-transform:
+    uppercase;
 }
 
-.about-cta h2 span {
+.about-hero h1
+  strong {
   display: block;
 
   color:
-    var(--about-purple);
+    var(--about-magenta);
 }
 
-.about-cta__actions {
+.about-hero__acronym {
+  max-width:
+    58rem;
+
+  margin-top:
+    2rem;
+}
+
+.about-hero__acronym
+  p {
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.68
+    );
+
+  font-size:
+    clamp(
+      0.86rem,
+      1.5vw,
+      1.08rem
+    );
+
+  line-height: 1.6;
+
+  letter-spacing:
+    0.03em;
+}
+
+.about-hero__acronym
+  strong {
+  color:
+    var(--about-gold-light);
+
+  font-size:
+    1.12em;
+}
+
+.about-hero__identity {
   display: flex;
-
-  justify-content: center;
-
-  align-items: center;
 
   flex-wrap: wrap;
 
-  gap: 1.5rem;
+  gap: 0.55rem;
 
   margin-top:
-    clamp(2.5rem, 5vw, 4rem);
+    2rem;
 }
 
-.about-cta__primary {
-  display: inline-flex;
+.about-hero__identity
+  span {
+  padding:
+    0.55rem
+    0.8rem;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.15
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.75
+    );
+
+  font-size:
+    0.58rem;
+
+  font-weight: 700;
+
+  text-transform:
+    uppercase;
+}
+
+.about-hero__identity
+  span:nth-child(1) {
+  border-color:
+    rgba(
+      197,
+      56,
+      191,
+      0.32
+    );
+}
+
+.about-hero__identity
+  span:nth-child(2) {
+  border-color:
+    rgba(
+      212,
+      175,
+      55,
+      0.4
+    );
+}
+
+.about-hero__identity
+  span:nth-child(3) {
+  border-color:
+    rgba(
+      30,
+      188,
+      249,
+      0.36
+    );
+}
+
+.about-hero__description {
+  max-width:
+    38rem;
+
+  margin:
+    2rem 0 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.58
+    );
+
+  font-size:
+    1rem;
+
+  line-height:
+    1.72;
+}
+
+.about-hero__cta {
+  width:
+    fit-content;
+
+  display: flex;
 
   align-items: center;
 
-  gap: 1.4rem;
+  gap: 2rem;
 
-  min-height: 3.8rem;
+  margin-top:
+    2.2rem;
 
   padding:
-    0.3rem
     0.35rem
-    0.3rem
-    1.4rem;
+    0.4rem
+    0.35rem
+    1.2rem;
 
-  border-radius: 999px;
+  border-radius:
+    999px;
 
   background:
-    var(--about-purple);
+    white;
 
-  color: #ffffff;
+  color:
+    var(--about-ink);
 
   text-decoration: none;
 
-  font-size: 0.77rem;
+  font-size:
+    0.68rem;
 
   font-weight: 700;
 }
 
-.about-cta__arrow {
-  width: 3.1rem;
+.about-hero__cta
+  span:last-child {
+  width:
+    2.7rem;
 
   aspect-ratio: 1;
 
@@ -1324,177 +511,2343 @@
 
   border-radius: 50%;
 
-  background: #ffffff;
+  background:
+    var(--about-purple);
+
+  color: white;
+}
+
+.about-hero__footer {
+  display: flex;
+
+  justify-content:
+    space-between;
+
+  margin-top:
+    5rem;
+
+  padding-top:
+    1rem;
+
+  border-top:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.34
+    );
+
+  font-size:
+    0.55rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+
+  text-transform:
+    uppercase;
+}
+
+/* =========================================================
+   SHARED EYEBROW
+========================================================= */
+
+.about-eyebrow {
+  display: block;
+
+  margin-bottom:
+    0.8rem;
 
   color:
     var(--about-purple);
 
-  transition:
-    transform 350ms
-    cubic-bezier(
-      0.16,
-      1,
-      0.3,
-      1
-    );
-}
+  font-size:
+    0.63rem;
 
-.about-cta__primary:hover
-.about-cta__arrow {
-  transform:
-    rotate(45deg);
-}
-
-.about-cta__secondary {
-  position: relative;
-
-  color:
-    var(--about-dark);
-
-  text-decoration: none;
-
-  font-size: 0.76rem;
   font-weight: 700;
+
+  letter-spacing:
+    0.16em;
+
+  text-transform:
+    uppercase;
+}
+
+.about-eyebrow--blue {
+  color:
+    var(--about-blue);
 }
 
 /* =========================================================
-   RESPONSIVE
+   WHO WE ARE
 ========================================================= */
 
-@media (max-width: 900px) {
-  .about-origin__layout {
-    grid-template-columns: 1fr;
-  }
+.about-who {
+  padding:
+    clamp(
+      8rem,
+      13vw,
+      13rem
+    )
+    0;
 
-  .about-origin__copy {
-    width:
-      min(100%, 34rem);
-
-    margin-left: auto;
-  }
-
-  .about-acronym__heading,
-  .about-identity__header {
-    grid-template-columns: 1fr;
-
-    gap: 2rem;
-  }
-
-  .about-identity__grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-identity__card {
-    min-height: 23rem;
-
-    border-right: 0;
-  }
-
-  .about-direction {
-    grid-template-columns: 1fr;
-  }
-
-  .about-direction__panel {
-    min-height: 70svh;
-  }
+  background: white;
 }
 
-@media (max-width: 700px) {
-  .about-container {
-    width:
-      calc(100% - 2.3rem);
-  }
+.about-who__layout {
+  display: grid;
 
-  .about-hero {
-    padding-inline:
-      1.15rem;
-  }
+  grid-template-columns:
+    minmax(
+      0,
+      1fr
+    )
+    minmax(
+      0,
+      1fr
+    );
 
-  .about-hero__top {
-    left: 1.15rem;
-    right: 1.15rem;
-  }
+  gap:
+    clamp(
+      3rem,
+      8vw,
+      8rem
+    );
 
-  .about-hero__year {
-    display: none;
-  }
+  align-items: center;
+}
 
-  .about-hero__title {
-    font-size:
-      clamp(
-        4rem,
-        20vw,
-        7.5rem
-      );
-  }
+.about-who__visual {
+  position: relative;
 
-  .about-hero__intro {
-    margin-left: 0;
-  }
+  min-height:
+    42rem;
 
-  .about-hero__orb {
-    width: 27rem;
+  overflow: hidden;
 
-    right: -15rem;
+  border-radius:
+    1.8rem;
 
-    top: 22%;
-  }
+  background:
+    #1c1421;
+}
 
-  .about-hero__scroll {
-    left: 1.15rem;
-    right: auto;
-  }
+.about-who__visual
+  > img {
+  width: 100%;
+  height: 100%;
 
-  .about-acronym__item {
-    grid-template-columns:
-      2.5rem
+  position: absolute;
+
+  inset: 0;
+
+  object-fit: cover;
+}
+
+.about-who__visual-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(
+        9,
+        6,
+        12,
+        0.58
+      ),
+      transparent 55%
+    );
+}
+
+.about-who__members,
+.about-who__founded {
+  position: absolute;
+
+  z-index: 2;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap: 0.25rem;
+
+  padding:
+    1rem;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.35
+    );
+
+  border-radius:
+    1rem;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.88
+    );
+
+  backdrop-filter:
+    blur(12px);
+
+  color:
+    var(--about-ink);
+}
+
+.about-who__members {
+  left: 1.2rem;
+  bottom: 1.2rem;
+}
+
+.about-who__founded {
+  top: 1.2rem;
+  right: 1.2rem;
+}
+
+.about-who__members
+  strong,
+.about-who__founded
+  strong {
+  color:
+    var(--about-purple);
+
+  font-size:
+    2rem;
+
+  line-height: 1;
+}
+
+.about-who__members
+  span,
+.about-who__founded
+  span {
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.5
+    );
+
+  font-size:
+    0.55rem;
+
+  font-weight: 700;
+}
+
+.about-who__content
+  h2 {
+  margin: 0;
+
+  max-width:
+    10ch;
+
+  font-size:
+    clamp(
+      3.8rem,
+      7vw,
+      7rem
+    );
+
+  line-height:
+    0.85;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.about-who__content
+  h2 strong {
+  display: block;
+
+  color:
+    var(--about-purple);
+}
+
+.about-who__copy {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap: 1rem;
+
+  margin-top:
+    2rem;
+}
+
+.about-who__copy
+  p {
+  margin: 0;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.58
+    );
+
+  line-height: 1.75;
+}
+
+.about-who__copy
+  strong {
+  color:
+    var(--about-ink);
+}
+
+.about-who__stats {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  margin-top:
+    3rem;
+
+  border-top:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.1
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.1
+    );
+}
+
+.about-who__stats
+  > div {
+  padding:
+    1.3rem 1rem;
+
+  border-right:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.1
+    );
+}
+
+.about-who__stats
+  > div:last-child {
+  border-right: 0;
+}
+
+.about-who__stats
+  strong {
+  display: block;
+
+  color:
+    var(--about-purple);
+
+  font-size:
+    clamp(
+      2.3rem,
+      4vw,
       4rem
+    );
+
+  line-height: 0.9;
+}
+
+.about-who__stats
+  span {
+  display: block;
+
+  margin-top:
+    0.5rem;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.4
+    );
+
+  font-size:
+    0.55rem;
+
+  font-weight: 700;
+
+  text-transform:
+    uppercase;
+}
+
+/* =========================================================
+   PARTNERS
+========================================================= */
+
+.about-partners {
+  padding:
+    4rem 0;
+
+  border-top:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.08
+    );
+
+  border-bottom:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.08
+    );
+
+  background:
+    #f6f6f6;
+}
+
+.about-partners__inner {
+  display: grid;
+
+  grid-template-columns:
+    auto 1fr
+    minmax(
+      15rem,
+      30rem
+    );
+
+  gap: 2rem;
+
+  align-items: center;
+}
+
+.about-partners__inner
+  > span {
+  color:
+    var(--about-purple);
+
+  font-size:
+    0.65rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.14em;
+
+  text-transform:
+    uppercase;
+}
+
+.about-partners__line {
+  height: 1px;
+
+  background:
+    rgba(
+      23,
+      19,
+      28,
+      0.1
+    );
+}
+
+.about-partners__inner
+  p {
+  margin: 0;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.43
+    );
+
+  font-size:
+    0.75rem;
+
+  line-height: 1.6;
+}
+
+/* =========================================================
+   BIBLICAL
+========================================================= */
+
+.about-biblical {
+  position: relative;
+
+  overflow: hidden;
+
+  padding:
+    clamp(
+      8rem,
+      13vw,
+      13rem
+    )
+    0;
+
+  background:
+    #101015;
+
+  color: white;
+}
+
+.about-biblical__quote-mark {
+  position: absolute;
+
+  left: -2rem;
+  top: -7rem;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.025
+    );
+
+  font-size:
+    35rem;
+
+  font-weight: 700;
+
+  line-height: 1;
+
+  pointer-events: none;
+}
+
+.about-biblical__layout {
+  position: relative;
+
+  z-index: 2;
+
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap:
+    clamp(
+      3rem,
+      8vw,
+      8rem
+    );
+
+  align-items: center;
+}
+
+.about-biblical
+  h2 {
+  margin: 0;
+
+  font-size:
+    clamp(
+      3.8rem,
+      7vw,
+      7rem
+    );
+
+  line-height:
+    0.85;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.about-biblical
+  h2 strong {
+  display: block;
+
+  color:
+    var(--about-magenta);
+}
+
+.about-biblical__copy {
+  display: flex;
+
+  flex-direction:
+    column;
+
+  gap: 1.3rem;
+
+  margin-top:
+    2rem;
+}
+
+.about-biblical__copy
+  p {
+  margin: 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.62
+    );
+
+  line-height: 1.75;
+}
+
+.about-biblical__copy
+  strong {
+  color: white;
+}
+
+.about-biblical__copy
+  em {
+  color:
+    var(--about-gold-light);
+
+  font-style: normal;
+
+  font-weight: 700;
+}
+
+.about-biblical
+  blockquote {
+  margin:
+    2.5rem 0 0;
+
+  padding:
+    1.5rem;
+
+  border-left:
+    3px solid
+    var(--about-gold);
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.05
+    );
+}
+
+.about-biblical
+  blockquote p {
+  margin: 0;
+
+  color: white;
+
+  font-size:
+    clamp(
+      1.1rem,
+      2vw,
+      1.5rem
+    );
+
+  font-style: italic;
+
+  line-height: 1.6;
+}
+
+.about-biblical
+  blockquote cite {
+  display: block;
+
+  margin-top:
+    0.7rem;
+
+  color:
+    var(--about-gold-light);
+
+  font-size:
+    0.7rem;
+
+  font-style: normal;
+}
+
+.about-biblical__visual {
+  position: relative;
+
+  min-height:
+    40rem;
+
+  overflow: hidden;
+
+  border-radius:
+    1.7rem;
+}
+
+.about-biblical__visual
+  img {
+  width: 100%;
+  height: 100%;
+
+  position: absolute;
+
+  inset: 0;
+
+  object-fit: cover;
+}
+
+.about-biblical__image-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(
+        7,
+        5,
+        10,
+        0.9
+      ),
+      transparent 65%
+    );
+}
+
+.about-biblical__identities {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 1.3rem;
+  right: 1.3rem;
+  bottom: 1.3rem;
+
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.5rem;
+}
+
+.about-biblical__identities
+  span {
+  padding:
+    0.55rem
+    0.75rem;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
+
+  border-radius:
+    999px;
+
+  background:
+    rgba(
+      78,
+      13,
+      133,
+      0.75
+    );
+
+  backdrop-filter:
+    blur(8px);
+
+  color: white;
+
+  font-size:
+    0.56rem;
+
+  font-weight: 700;
+}
+
+.about-biblical__identities
+  span:nth-child(2) {
+  background:
+    rgba(
+      168,
+      135,
+      26,
+      0.78
+    );
+}
+
+.about-biblical__identities
+  span:nth-child(3) {
+  background:
+    rgba(
+      30,
+      125,
+      180,
+      0.78
+    );
+}
+
+/* =========================================================
+   MISSION / VISION
+========================================================= */
+
+.about-direction {
+  padding:
+    clamp(
+      8rem,
+      13vw,
+      13rem
+    )
+    0;
+
+  background:
+    white;
+}
+
+.about-direction__heading {
+  display: grid;
+
+  grid-template-columns:
+    0.3fr 0.7fr;
+
+  gap: 3rem;
+
+  margin-bottom:
+    5rem;
+}
+
+.about-direction__heading
+  > span {
+  color:
+    var(--about-purple);
+
+  font-size:
+    0.64rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform:
+    uppercase;
+}
+
+.about-direction__heading
+  h2 {
+  margin: 0;
+
+  max-width:
+    9ch;
+
+  font-size:
+    clamp(
+      3.8rem,
+      7vw,
+      7rem
+    );
+
+  line-height:
+    0.85;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.about-direction__heading
+  strong {
+  display: block;
+
+  color:
+    var(--about-purple);
+}
+
+.about-direction__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      2,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 1.2rem;
+}
+
+.about-direction-card {
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.1
+    );
+
+  border-radius:
+    1.5rem;
+
+  background:
+    #f7f6f8;
+}
+
+.about-direction-card__media {
+  position: relative;
+
+  min-height:
+    22rem;
+
+  overflow: hidden;
+}
+
+.about-direction-card__media
+  img {
+  position: absolute;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+}
+
+.about-direction-card__media-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(
+        8,
+        5,
+        11,
+        0.88
+      ),
+      rgba(
+        78,
+        13,
+        133,
+        0.38
+      )
+    );
+}
+
+.about-direction-card__media--vision
+  .about-direction-card__media-overlay {
+  background:
+    linear-gradient(
+      to top,
+      rgba(
+        8,
+        5,
+        11,
+        0.88
+      ),
+      rgba(
+        168,
+        135,
+        26,
+        0.44
+      )
+    );
+}
+
+.about-direction-card__label {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 1.5rem;
+  right: 1.5rem;
+  bottom: 1.5rem;
+
+  color: white;
+}
+
+.about-direction-card__label
+  > span {
+  color:
+    var(--about-gold-light);
+
+  font-size:
+    0.55rem;
+
+  font-weight: 700;
+}
+
+.about-direction-card__label
+  h3 {
+  margin:
+    0.4rem 0 0;
+
+  font-size:
+    clamp(
+      2.5rem,
+      5vw,
+      4.5rem
+    );
+
+  line-height: 0.9;
+}
+
+.about-direction-card__label
+  p {
+  margin:
+    0.6rem 0 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.63
+    );
+
+  font-size:
+    0.62rem;
+}
+
+.about-direction-card__body {
+  padding:
+    clamp(
+      1.5rem,
+      4vw,
+      2.5rem
+    );
+}
+
+.about-direction-card__lead,
+.about-direction-card__vision-copy {
+  margin: 0;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.58
+    );
+
+  line-height: 1.75;
+}
+
+.about-direction-card__lead
+  strong,
+.about-direction-card__vision-copy
+  strong {
+  color:
+    var(--about-ink);
+}
+
+.about-direction-card__points {
+  display: grid;
+
+  gap: 0.7rem;
+
+  margin-top:
+    2rem;
+}
+
+.about-direction-card__points
+  > div {
+  padding:
+    1rem;
+
+  border-radius:
+    0.8rem;
+
+  background:
+    #eeebf0;
+}
+
+.about-direction-card__points
+  span {
+  color:
+    var(--about-purple);
+
+  font-size:
+    0.55rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.12em;
+}
+
+.about-direction-card__points
+  p {
+  margin:
+    0.5rem 0 0;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.52
+    );
+
+  font-size:
+    0.76rem;
+
+  line-height: 1.65;
+}
+
+.about-direction-card__vision-copy {
+  margin-top:
+    1.4rem;
+}
+
+/* =========================================================
+   SHARED SECTION HEADING
+========================================================= */
+
+.about-section-heading {
+  margin-bottom:
+    5rem;
+}
+
+.about-section-heading--center {
+  max-width:
+    48rem;
+
+  margin-inline:
+    auto;
+
+  margin-bottom:
+    5rem;
+
+  text-align: center;
+}
+
+.about-section-heading
+  > span {
+  color:
+    var(--about-purple);
+
+  font-size:
+    0.64rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.15em;
+
+  text-transform:
+    uppercase;
+}
+
+.about-section-heading
+  h2 {
+  margin:
+    1rem auto 0;
+
+  max-width:
+    9ch;
+
+  font-size:
+    clamp(
+      3.8rem,
+      7vw,
+      7rem
+    );
+
+  line-height:
+    0.85;
+
+  letter-spacing:
+    -0.065em;
+}
+
+.about-section-heading
+  h2 strong {
+  display: block;
+
+  color:
+    var(--about-purple);
+}
+
+.about-section-heading
+  > p {
+  max-width:
+    39rem;
+
+  margin:
+    1.6rem auto 0;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.52
+    );
+
+  line-height: 1.7;
+}
+
+/* =========================================================
+   MINISTRIES
+========================================================= */
+
+.about-ministries {
+  padding:
+    clamp(
+      8rem,
+      13vw,
+      13rem
+    )
+    0;
+
+  background:
+    #efedf0;
+}
+
+.about-ministries__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      3,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 1rem;
+}
+
+.about-ministry-card {
+  overflow: hidden;
+
+  border:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.1
+    );
+
+  border-radius:
+    1.4rem;
+
+  background: white;
+}
+
+.about-ministry-card__media {
+  position: relative;
+
+  height:
+    23rem;
+
+  overflow: hidden;
+}
+
+.about-ministry-card__media
+  img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  transition:
+    transform
+      600ms ease;
+}
+
+.about-ministry-card:hover
+  .about-ministry-card__media
+  img {
+  transform:
+    scale(1.045);
+}
+
+.about-ministry-card__overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to top,
+      rgba(
+        7,
+        5,
+        10,
+        0.74
+      ),
+      transparent
+        60%
+    );
+}
+
+.about-ministry-card__media
+  > span {
+  position: absolute;
+
+  z-index: 2;
+
+  left: 1rem;
+  bottom: 1rem;
+
+  color: white;
+
+  font-size:
+    0.58rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.15em;
+}
+
+.about-ministry-card__body {
+  padding:
+    1.4rem;
+}
+
+.about-ministry-card__body
+  > span {
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.3
+    );
+
+  font-size:
+    0.56rem;
+
+  font-weight: 700;
+}
+
+.about-ministry-card
+  h3 {
+  margin:
+    0.7rem 0 0;
+
+  font-size:
+    clamp(
+      2rem,
+      3.5vw,
+      3.5rem
+    );
+
+  line-height:
+    0.93;
+
+  letter-spacing:
+    -0.05em;
+}
+
+.about-ministry-card__body
+  > p {
+  min-height:
+    9rem;
+
+  margin:
+    1.2rem 0 0;
+
+  color:
+    rgba(
+      23,
+      19,
+      28,
+      0.5
+    );
+
+  font-size:
+    0.78rem;
+
+  line-height: 1.68;
+}
+
+.about-ministry-card__body
+  > a {
+  display: flex;
+
+  align-items: center;
+
+  justify-content:
+    space-between;
+
+  margin-top:
+    1.4rem;
+
+  padding-top:
+    1rem;
+
+  border-top:
+    1px solid
+    rgba(
+      23,
+      19,
+      28,
+      0.08
+    );
+
+  color:
+    var(--about-purple);
+
+  font-size:
+    0.65rem;
+
+  font-weight: 700;
+
+  text-decoration: none;
+}
+
+.about-ministry-card--gold
+  .about-ministry-card__body
+  > a {
+  color:
+    #9b7814;
+}
+
+.about-ministry-card--blue
+  .about-ministry-card__body
+  > a {
+  color:
+    #137ca7;
+}
+
+/* =========================================================
+   CHAPTERS
+========================================================= */
+
+.about-chapters {
+  position: relative;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  padding:
+    clamp(
+      8rem,
+      13vw,
+      13rem
+    )
+    0;
+
+  background:
+    #0e0c12;
+
+  color: white;
+}
+
+.about-chapters__background {
+  position: absolute;
+
+  z-index: -3;
+
+  inset: 0;
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  opacity: 0.18;
+}
+
+.about-chapters__overlay {
+  position: absolute;
+
+  z-index: -2;
+
+  inset: 0;
+
+  background:
+    rgba(
+      10,
+      7,
+      13,
+      0.86
+    );
+}
+
+.about-section-heading--dark
+  > span {
+  color:
+    var(--about-gold-light);
+}
+
+.about-section-heading--dark
+  h2 {
+  color: white;
+}
+
+.about-section-heading--dark
+  h2 strong {
+  color:
+    var(--about-magenta);
+}
+
+.about-section-heading--dark
+  > p {
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.54
+    );
+}
+
+.about-chapters__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(
+      4,
+      minmax(
+        0,
+        1fr
+      )
+    );
+
+  gap: 0.8rem;
+}
+
+.about-chapter-card {
+  min-height:
+    18rem;
+
+  display: flex;
+
+  flex-direction:
+    column;
+
+  align-items: center;
+
+  justify-content:
+    center;
+
+  padding:
+    1.5rem;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.12
+    );
+
+  border-radius:
+    1.3rem;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.045
+    );
+
+  text-align: center;
+
+  backdrop-filter:
+    blur(8px);
+}
+
+.about-chapter-card__logo {
+  width: 4.8rem;
+
+  aspect-ratio: 1;
+
+  display: grid;
+
+  place-items: center;
+
+  overflow: hidden;
+
+  padding: 0.4rem;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.16
+    );
+
+  border-radius:
+    1rem;
+
+  background:
+    rgba(
+      255,
+      255,
+      255,
+      0.08
+    );
+}
+
+.about-chapter-card__logo
+  img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: contain;
+
+  border-radius:
+    0.6rem;
+}
+
+.about-chapter-card
+  h3 {
+  margin:
+    1.3rem 0 0;
+
+  font-size:
+    1.15rem;
+}
+
+.about-chapter-card
+  p {
+  margin:
+    0.7rem 0 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.44
+    );
+
+  font-size:
+    0.68rem;
+
+  line-height: 1.55;
+}
+
+.about-chapter-card--purple {
+  border-color:
+    rgba(
+      197,
+      56,
+      191,
+      0.27
+    );
+}
+
+.about-chapter-card--blue {
+  border-color:
+    rgba(
+      30,
+      188,
+      249,
+      0.28
+    );
+}
+
+.about-chapter-card--coral {
+  border-color:
+    rgba(
+      235,
+      87,
+      87,
+      0.3
+    );
+}
+
+.about-chapter-card--gold {
+  border-color:
+    rgba(
+      212,
+      175,
+      55,
+      0.3
+    );
+}
+
+.about-chapters__note {
+  margin:
+    2.5rem 0 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.4
+    );
+
+  font-size:
+    0.7rem;
+
+  font-style: italic;
+
+  text-align: center;
+}
+
+.about-chapters__cta {
+  width:
+    fit-content;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 2rem;
+
+  margin:
+    2rem auto 0;
+
+  padding:
+    0.35rem
+    0.4rem
+    0.35rem
+    1.2rem;
+
+  border-radius:
+    999px;
+
+  background: white;
+
+  color:
+    var(--about-ink);
+
+  text-decoration: none;
+
+  font-size:
+    0.67rem;
+
+  font-weight: 700;
+}
+
+.about-chapters__cta
+  span:last-child {
+  width:
+    2.7rem;
+
+  aspect-ratio: 1;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--about-purple);
+
+  color: white;
+}
+
+/* =========================================================
+   FINAL CTA
+========================================================= */
+
+.about-final {
+  position: relative;
+
+  min-height:
+    82svh;
+
+  display: flex;
+
+  align-items: center;
+
+  overflow: hidden;
+
+  isolation: isolate;
+
+  background:
+    linear-gradient(
+      135deg,
+      #431071,
+      #17101f
+        58%,
+      #082c3d
+    );
+
+  color: white;
+}
+
+.about-final__grid {
+  position: absolute;
+
+  inset: 0;
+
+  opacity: 0.07;
+
+  background-image:
+    linear-gradient(
+      rgba(
+        255,
+        255,
+        255,
+        0.1
+      )
+        1px,
+      transparent
+        1px
+    ),
+    linear-gradient(
+      90deg,
+      rgba(
+        255,
+        255,
+        255,
+        0.1
+      )
+        1px,
+      transparent
+        1px
+    );
+
+  background-size:
+    5rem 5rem;
+}
+
+.about-final__orb {
+  position: absolute;
+
+  right: -10rem;
+
+  width:
+    min(
+      60vw,
+      54rem
+    );
+
+  aspect-ratio: 1;
+}
+
+.about-final__orb
+  span {
+  position: absolute;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.1
+    );
+
+  border-radius: 50%;
+}
+
+.about-final__orb
+  span:nth-child(1) {
+  inset: 0;
+}
+
+.about-final__orb
+  span:nth-child(2) {
+  inset: 22%;
+}
+
+.about-final__orb
+  span:nth-child(3) {
+  inset: 44%;
+
+  background:
+    rgba(
+      30,
+      188,
+      249,
+      0.16
+    );
+}
+
+.about-final__inner {
+  position: relative;
+
+  z-index: 2;
+
+  padding:
+    8rem 0;
+}
+
+.about-final__inner
+  > span {
+  color:
+    var(--about-gold-light);
+
+  font-size:
+    0.62rem;
+
+  font-weight: 700;
+
+  letter-spacing:
+    0.17em;
+
+  text-transform:
+    uppercase;
+}
+
+.about-final h2 {
+  margin:
+    1.2rem 0 0;
+
+  max-width:
+    10ch;
+
+  font-size:
+    clamp(
+      4rem,
+      9vw,
+      9rem
+    );
+
+  line-height:
+    0.8;
+
+  letter-spacing:
+    -0.073em;
+}
+
+.about-final h2
+  strong {
+  display: block;
+
+  color:
+    var(--about-magenta);
+}
+
+.about-final
+  > .about-container
+  > p {
+  max-width:
+    37rem;
+
+  margin:
+    2rem 0 0;
+
+  color:
+    rgba(
+      255,
+      255,
+      255,
+      0.6
+    );
+
+  line-height: 1.72;
+}
+
+.about-final__actions {
+  display: flex;
+
+  flex-wrap: wrap;
+
+  gap: 0.7rem;
+
+  margin-top:
+    2.5rem;
+}
+
+.about-final__primary,
+.about-final__secondary {
+  text-decoration: none;
+
+  font-size:
+    0.68rem;
+
+  font-weight: 700;
+}
+
+.about-final__primary {
+  display: flex;
+
+  align-items: center;
+
+  gap: 2rem;
+
+  padding:
+    0.35rem
+    0.4rem
+    0.35rem
+    1.2rem;
+
+  border-radius:
+    999px;
+
+  background: white;
+
+  color:
+    var(--about-ink);
+}
+
+.about-final__primary
+  span:last-child {
+  width:
+    2.7rem;
+
+  aspect-ratio: 1;
+
+  display: grid;
+
+  place-items: center;
+
+  border-radius: 50%;
+
+  background:
+    var(--about-purple);
+
+  color: white;
+}
+
+.about-final__secondary {
+  display: grid;
+
+  place-items: center;
+
+  padding:
+    0.9rem
+    1.3rem;
+
+  border:
+    1px solid
+    rgba(
+      255,
+      255,
+      255,
+      0.25
+    );
+
+  border-radius:
+    999px;
+
+  color: white;
+}
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (
+  max-width: 950px
+) {
+  .about-who__layout,
+  .about-biblical__layout {
+    grid-template-columns:
       1fr;
   }
 
-  .about-acronym__word {
-    font-size:
-      clamp(
-        1.5rem,
-        7vw,
-        2.5rem
+  .about-who__visual,
+  .about-biblical__visual {
+    min-height:
+      34rem;
+  }
+
+  .about-direction__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .about-ministries__grid {
+    grid-template-columns:
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
       );
   }
 
-  .about-scripture__top {
+  .about-chapters__grid {
     grid-template-columns:
-      auto 1fr;
+      repeat(
+        2,
+        minmax(
+          0,
+          1fr
+        )
+      );
   }
 
-  .about-scripture__top
-  span:last-child {
+  .about-partners__inner {
+    grid-template-columns:
+      1fr;
+  }
+
+  .about-partners__line {
+    width: 100%;
+  }
+}
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (
+  max-width: 650px
+) {
+  .about-container {
+    width:
+      calc(
+        100% -
+        2.2rem
+      );
+  }
+
+  .about-hero {
+    padding:
+      7rem 0
+      3rem;
+  }
+
+  .about-hero h1 {
+    font-size:
+      clamp(
+        4.2rem,
+        20vw,
+        6.8rem
+      );
+  }
+
+  .about-hero__acronym {
+    margin-top:
+      1.5rem;
+  }
+
+  .about-hero__identity {
+    gap: 0.4rem;
+  }
+
+  .about-hero__identity
+    span {
+    font-size:
+      0.51rem;
+  }
+
+  .about-hero__footer
+    span:first-child {
     display: none;
   }
 
-  .about-scripture__story {
-    grid-template-columns: 1fr;
+  .about-who,
+  .about-biblical,
+  .about-direction,
+  .about-ministries,
+  .about-chapters {
+    padding:
+      7rem 0;
+  }
+
+  .about-who__visual,
+  .about-biblical__visual {
+    min-height:
+      27rem;
+
+    border-radius:
+      1.2rem;
+  }
+
+  .about-who__content
+    h2,
+  .about-biblical
+    h2,
+  .about-direction__heading
+    h2,
+  .about-section-heading
+    h2 {
+    font-size:
+      clamp(
+        3.3rem,
+        15vw,
+        5rem
+      );
+  }
+
+  .about-who__stats {
+    grid-template-columns:
+      1fr;
+  }
+
+  .about-who__stats
+    > div {
+    border-right: 0;
+
+    border-bottom:
+      1px solid
+      rgba(
+        23,
+        19,
+        28,
+        0.08
+      );
+  }
+
+  .about-direction__heading {
+    grid-template-columns:
+      1fr;
 
     gap: 2rem;
   }
 
-  .about-direction__panel {
-    padding:
-      5rem 1.15rem;
+  .about-direction-card__media {
+    min-height:
+      18rem;
   }
 
-  .about-cta__actions {
-    flex-direction: column;
+  .about-ministries__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .about-ministry-card__media {
+    height:
+      26rem;
+  }
+
+  .about-ministry-card__body
+    > p {
+    min-height: 0;
+  }
+
+  .about-chapters__grid {
+    grid-template-columns:
+      1fr;
+  }
+
+  .about-chapter-card {
+    min-height:
+      14rem;
+  }
+
+  .about-final {
+    min-height: auto;
+  }
+
+  .about-final__inner {
+    padding:
+      8rem 0;
+  }
+
+  .about-final h2 {
+    font-size:
+      clamp(
+        3.6rem,
+        17vw,
+        6rem
+      );
+  }
+
+  .about-final__orb {
+    width:
+      36rem;
+
+    right:
+      -27rem;
+  }
+
+  .about-final__actions {
+    align-items:
+      stretch;
+
+    flex-direction:
+      column;
+  }
+
+  .about-final__primary,
+  .about-final__secondary {
+    width: 100%;
+  }
+
+  .about-final__secondary {
+    min-height:
+      3.5rem;
   }
 }
 
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
 @media (
-  prefers-reduced-motion: reduce
+  max-width: 430px
 ) {
-  .about-hero__scroll-line span {
-    animation: none;
+  .about-hero__established
+    span:last-child {
+    font-size:
+      0.52rem;
   }
 
-  .about-hero__orb {
-    transform: none !important;
+  .about-who__visual {
+    min-height:
+      24rem;
+  }
+
+  .about-who__members {
+    left: 0.8rem;
+    bottom: 0.8rem;
+  }
+
+  .about-who__founded {
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+
+  .about-ministry-card__media {
+    height:
+      22rem;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media (
+  prefers-reduced-motion:
+    reduce
+) {
+  .about-ministry-card__media
+    img {
+    transition: none;
+  }
+
+  .about-page *,
+  .about-page *::before,
+  .about-page *::after {
+    scroll-behavior:
+      auto !important;
   }
 }
