@@ -1,29 +1,15 @@
 import type { ReactNode } from "react";
 import { CursorProvider } from "../components/cursor/CursorProvider";
 import CustomCursor from "../components/cursor/CustomCursor";
-import { useLenis } from "../hooks/useLenis";
-interface ProvidersProps {
-  children: ReactNode;
-}
+import SmoothScroll from "../components/motion/SmoothScroll";
 
-function SmoothScrollProvider({
-  children,
-}: ProvidersProps) {
-  useLenis();
-
-  return <>{children}</>;
-}
-
-export function AppProviders({
-  children,
-}: ProvidersProps) {
+export function AppProviders({ children }: { children: ReactNode }) {
   return (
     <CursorProvider>
-      <SmoothScrollProvider>
+      <SmoothScroll>
         <CustomCursor />
-
         {children}
-      </SmoothScrollProvider>
+      </SmoothScroll>
     </CursorProvider>
   );
 }

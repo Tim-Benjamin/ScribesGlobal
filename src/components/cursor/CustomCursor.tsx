@@ -1,6 +1,5 @@
 import {
   useEffect,
-  useRef,
 } from "react";
 
 import { motion, useSpring } from "motion/react";

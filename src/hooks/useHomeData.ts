@@ -13,7 +13,7 @@ import {
   getSiteSettings,
   getSocialStats,
   getTikTokVideos,
-} from "../../lib/supabase/queries";
+} from "../lib/supabase/queries";
 
 type SectionState<T> = {
   data: T;
