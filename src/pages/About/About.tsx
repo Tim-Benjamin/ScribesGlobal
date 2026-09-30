@@ -950,7 +950,7 @@ export default function About() {
                       <span>
                         {String(
                           index +
-                          1,
+                            1,
                         ).padStart(
                           2,
                           "0",
